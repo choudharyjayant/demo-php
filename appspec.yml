@@ -8,5 +8,5 @@ file_exists_behavior: OVERWRITE #this will overwrite all the existing files.
 hooks:
   ApplicationStart:
     - location: Dependency_Scripts/startApplication.sh
-      timeout: 300
+      timeout: 350
       runas: ubuntu
