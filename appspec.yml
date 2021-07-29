@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/html #valid path where code has to be updated.
+file_exists_behavior: OVERWRITE #this will overwrite all the existing files. 
+
+hooks:
+  AfterInstall:
+    - location: Dependency-script/Purge-cache.sh
+      timeout: 300
+      runas: ec2-user #or the valid user of server. 
