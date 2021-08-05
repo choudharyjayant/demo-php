@@ -5,6 +5,14 @@ files:
     destination: /home/ubuntu/php #valid path where code has to be updated.
 file_exists_behavior: OVERWRITE #this will overwrite all the existing files. 
 
+permissions:
+  - object: /home/ubuntu/php/Dependency_Scripts
+      pattern: "**"
+      owner: ubuntu
+      mode: 777
+      type:
+        - file
+
 hooks:
   AfterInstall:
     - location: ./Dependency_Scripts/startApplication.sh
