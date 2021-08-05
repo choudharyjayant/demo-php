@@ -8,15 +8,11 @@ file_exists_behavior: OVERWRITE #this will overwrite all the existing files.
 permissions:
   - object: /home/ubuntu/php/Dependency_Scripts/
     pattern: "**"
-    owner: root
+    owner: ubuntu
     mode: 777
     type:
       - file
 hooks:
-  BeforeInstall:
-    - location: Dependency_Scripts/rmBeforeInstall.sh
-      timeout: 300
-      runas: ubuntu
   AfterInstall:
     - location: ./Dependency_Scripts/startApplication.sh
       timeout: 350
